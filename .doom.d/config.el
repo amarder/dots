@@ -3,9 +3,7 @@
 (setq user-full-name "Jethro Kuan"
       user-mail-address "jethrokuan95@gmail.com"
       doom-scratch-initial-major-mode 'lisp-interaction-mode
-      doom-font (font-spec :family "Iosevka" :size 15)
       doom-variable-pitch-font (font-spec :family "Roboto" :size 16)
-      doom-serif-font (font-spec :family "Libre Baskerville")
       doom-theme 'modus-operandi
       display-line-numbers-type nil
       load-prefer-newer t
@@ -367,7 +365,7 @@
         :desc "org-roam-ref-find" "r" #'org-roam-ref-find
         :desc "org-roam-show-graph" "g" #'org-roam-show-graph
         :desc "org-roam-capture" "c" #'org-roam-capture)
-  (setq org-roam-directory (file-truename "~/.org/braindump/org/")
+  (setq org-roam-directory (file-truename "~/.org/roam/")
         org-roam-db-gc-threshold most-positive-fixnum
         org-id-link-to-org-use-id t)
   :config
@@ -422,7 +420,7 @@
 
 
 (after! org-ref
-  (setq org-ref-default-bibliography `,(list (concat org-directory "braindump/org/biblio.bib"))))
+  (setq org-ref-default-bibliography `,(list (concat org-directory "roam/biblio.bib"))))
 
 (use-package! org-roam-protocol
   :after org-protocol)
@@ -460,8 +458,8 @@
 
 (use-package! bibtex-completion
   :config
-  (setq bibtex-completion-notes-path "~/.org/braindump/org/"
-        bibtex-completion-bibliography "~/.org/braindump/org/biblio.bib"
+  (setq bibtex-completion-notes-path "~/.org/roam/"
+        bibtex-completion-bibliography "~/.org/roam/biblio.bib"
         bibtex-completion-pdf-field "file"
         bibtex-completion-notes-template-multiple-files
          (concat
