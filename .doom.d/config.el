@@ -1,10 +1,10 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-(setq user-full-name "Jethro Kuan"
-      user-mail-address "jethrokuan95@gmail.com"
+(setq user-full-name "Andrew Marder"
+      user-mail-address "andrew.n.marder@gmail.com"
       doom-scratch-initial-major-mode 'lisp-interaction-mode
       doom-variable-pitch-font (font-spec :family "Roboto" :size 16)
-      doom-theme 'modus-operandi
+      doom-theme 'doom-one
       display-line-numbers-type nil
       load-prefer-newer t
       +zen-text-scale 1
@@ -13,30 +13,6 @@
       company-idle-delay nil
       lsp-ui-sideline-enable nil
       lsp-enable-symbol-highlighting nil)
-
-(use-package modus-themes
-  :ensure
-  :init
-  ;; Add all your customizations prior to loading the themes
-  (setq modus-themes-italic-constructs t
-        modus-themes-completions 'opinionated
-        modus-themes-variable-pitch-headings t
-        modus-themes-scale-headings t
-        modus-themes-variable-pitch-ui t
-        modus-themes-org-agenda
-        '((header-block . (variable-pitch scale-title))
-          (header-date . (grayscale bold-all)))
-        modus-themes-org-blocks
-        '(grayscale)
-        modus-themes-mode-line
-        '(borderless)
-        modus-themes-region '(bg-only no-extend))
-
-  ;; Load the theme files before enabling a theme
-  (modus-themes-load-themes)
-  :config
-  (modus-themes-load-operandi)
-  :bind ("<f5>" . modus-themes-toggle))
 
 (setq org-directory "~/.org/"
       org-ellipsis " ▼ "
